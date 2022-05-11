@@ -2,8 +2,8 @@
 title: "Análisis de datos de COVID-19 en Costa Rica - Gráficos del paquete base"
 author: "Bryan Ramirez"
 date: '2022-05-11'
-output:
-  html_document:
+output: 
+  html_document:  
     theme: readable
     toc: true
     toc_depth: 5
