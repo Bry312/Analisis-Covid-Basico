@@ -9,8 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Presentacion
+## Presentacion  
 Este documento presenta graficos generados a partir de los datos de COVID-19 en Costa Rica, compartidos en el Ministeiro de salud en [https://geovision.uned.ac.cr/oges/](https://geovision.uned.ac.cr/oges/)
+
 
 ## Entradas  
 ```{r carga-datos}
