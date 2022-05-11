@@ -2,7 +2,15 @@
 title: "Análisis de datos de COVID-19 en Costa Rica - Gráficos del paquete base"
 author: "Bryan Ramirez"
 date: '2022-05-11'
-output: html_document
+output:
+  html_document:
+    theme: readable
+    toc: true
+    toc_depth: 5
+    toc_float:  
+      collapsed: false
+      smooth_scroll: false
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -44,9 +52,59 @@ covid$FECHA <- as.Date(covid$FECHA, format = "%d/%m/%Y")
 plot(
   covid$FECHA,
   covid$positivos,
+  type = "l", 
+  xaxt = "n",
+  yaxt = "n",
   main = "Casos acumulados poitivps de COVID-19 en Costa Rica",
   xlab = "Fecha",
   ylab = "Casos"
+)
+
+axis(
+  side = 1,
+  covid$FECHA,
+  tick = FALSE,
+  format(covid$FECHA, "%m-%y"), 
+  cex.axis = 0.7
+)
+
+axis(
+  side = 2,
+  covid$positivos,
+  labels = TRUE,  
+  at = seq(0, 1000000, by = 200000),
+  cex.axis = .7
+)
+
+```
+#### Fallecidos
+
+```{r casos-fallecidos}
+plot(
+  covid$FECHA,
+  covid$fallecidos,
+  type = "l",
+  xaxt = "n",
+  yaxt = "n",
+  main = "Casos fallecidos acumulados de COVID en Costa Rica",
+  xlab = "Fecha",
+  ylab = "Casos fallecidos"
+)
+
+axis(
+  side = 1,
+  covid$FECHA,
+  tick = FALSE,
+  format(covid$FECHA, "%m-%y"), 
+  cex.axis = 0.7
+)
+
+axis(
+  side = 2,
+  covid$positivos,
+  labels = TRUE,  
+  at = seq(0, 10000, by = 2000),
+  cex.axis = .7
 )
 ```
 
